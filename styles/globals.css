@@ -2,32 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+/* Tables */
+
+table {
+    @apply w-full md:mx-auto md:w-1/2 shadow-lg rounded-md scroll-smooth overflow-scroll max-h-52;
+};
+
+tbody tr td {
+    @apply py-2 px-4 flex items-center border-b;
+};
+
+/* Forms */
+
+.basic {
+    @apply w-full md:w-3/4 py-5 mx-auto flex flex-col rounded-md shadow-md;
+};
+
+.basic div {
+    @apply w-full px-2 flex;
+};
+
+.basic label {
+    @apply text-sm;
+};
+
+.basic textarea {
+    @apply border rounded-md;
+};
+
+/* Buttons */
+.btn {
+    @apply border rounded-lg px-3 shadow-md hover:shadow-inner;
+};
+
+.btn-primary {
+    @apply text-green-600;
+};
+
+.btn-secondary {
+    @apply text-red-600;
+};
